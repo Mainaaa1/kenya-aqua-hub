@@ -61,6 +61,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom PoolShop colors
+				pool: {
+					blue: 'hsl(var(--pool-blue))',
+					'blue-dark': 'hsl(var(--pool-blue-dark))',
+					teal: 'hsl(var(--pool-teal))',
+					'aqua-light': 'hsl(var(--aqua-light))'
 				}
 			},
 			borderRadius: {

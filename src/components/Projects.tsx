@@ -1,0 +1,163 @@
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Eye, MapPin } from "lucide-react";
+
+const Projects = () => {
+  const [filter, setFilter] = useState("all");
+
+  const projects = [
+    {
+      id: 1,
+      title: "Luxury Resort Pool Complex",
+      category: "pools",
+      location: "Mombasa, Kenya",
+      description: "50-meter infinity pool with underwater lighting and waterfall features for a 5-star resort.",
+      image: "/placeholder.svg",
+      tags: ["Infinity Pool", "Commercial", "LED Lighting"]
+    },
+    {
+      id: 2,
+      title: "Private Villa Sauna & Spa", 
+      category: "saunas",
+      location: "Nairobi Hills",
+      description: "Custom Finnish sauna with relaxation area and outdoor hot tub for a luxury residential property.",
+      image: "/placeholder.svg",
+      tags: ["Finnish Sauna", "Hot Tub", "Residential"]
+    },
+    {
+      id: 3,
+      title: "Corporate Headquarters Fountain",
+      category: "fountains", 
+      location: "Westlands, Nairobi",
+      description: "Modern geometric fountain design with programmable water jets and LED color changing system.",
+      image: "/placeholder.svg",
+      tags: ["Commercial", "LED System", "Modern Design"]
+    },
+    {
+      id: 4,
+      title: "Family Swimming Pool",
+      category: "pools",
+      location: "Karen, Nairobi", 
+      description: "Family-friendly pool with shallow end, diving area, and integrated spa section.",
+      image: "/placeholder.svg",
+      tags: ["Family Pool", "Spa Integration", "Safety Features"]
+    },
+    {
+      id: 5,
+      title: "Hotel Wellness Center",
+      category: "saunas",
+      location: "Nakuru",
+      description: "Complete wellness facility with steam room, dry sauna, and relaxation pools.",
+      image: "/placeholder.svg",
+      tags: ["Steam Room", "Wellness Center", "Commercial"]
+    },
+    {
+      id: 6,
+      title: "Garden Water Feature",
+      category: "fountains",
+      location: "Kilifi",
+      description: "Natural stone fountain with koi pond integration and tropical landscaping.",
+      image: "/placeholder.svg", 
+      tags: ["Natural Stone", "Koi Pond", "Landscaping"]
+    }
+  ];
+
+  const categories = [
+    { id: "all", name: "All Projects" },
+    { id: "pools", name: "Swimming Pools" },
+    { id: "saunas", name: "Saunas & Spas" },
+    { id: "fountains", name: "Fountains" }
+  ];
+
+  const filteredProjects = filter === "all" 
+    ? projects 
+    : projects.filter(project => project.category === filter);
+
+  return (
+    <section id="projects" className="py-20 bg-secondary/30">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Our Featured Projects
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Explore our portfolio of stunning aquatic installations across Kenya. 
+            Each project showcases our commitment to quality, innovation, and exceptional design.
+          </p>
+
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {categories.map((category) => (
+              <Button
+                key={category.id}
+                variant={filter === category.id ? "default" : "outline"}
+                onClick={() => setFilter(category.id)}
+                className={filter === category.id ? "bg-gradient-to-r from-primary to-pool-teal text-white border-0" : ""}
+              >
+                {category.name}
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => (
+            <Card key={project.id} className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <Button size="sm" variant="outline" className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-black">
+                      <Eye className="h-4 w-4 mr-2" />
+                      View Details
+                    </Button>
+                  </div>
+                </div>
+              </div>
+              
+              <CardContent className="p-6">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
+                </div>
+                
+                <div className="flex items-center text-muted-foreground mb-3">
+                  <MapPin className="h-4 w-4 mr-1" />
+                  <span className="text-sm">{project.location}</span>
+                </div>
+                
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, index) => (
+                    <Badge key={index} variant="secondary" className="text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Load More */}
+        <div className="text-center mt-12">
+          <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white">
+            View All Projects
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
