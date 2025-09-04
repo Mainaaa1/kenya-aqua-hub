@@ -39,10 +39,19 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-20 bg-background relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-primary to-pool-teal rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-pool-teal to-primary rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/10 to-pool-teal/10 rounded-full text-primary text-sm font-medium mb-6">
+            Professional Aquatic Solutions
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Premium Services
           </h2>
@@ -57,7 +66,12 @@ const Services = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className={`relative hover:shadow-lg transition-all duration-300 ${service.popular ? 'border-primary shadow-md' : ''}`}>
+              <Card 
+                key={index} 
+                className={`relative group hover:shadow-xl hover:-translate-y-2 transition-all duration-500 ${service.popular ? 'border-primary shadow-md' : ''}`}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
                 {service.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <span className="bg-gradient-to-r from-primary to-pool-teal text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -67,7 +81,7 @@ const Services = () => {
                 )}
                 
                 <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-4 p-3 bg-gradient-to-r from-primary to-pool-teal rounded-full w-fit">
+                  <div className="mx-auto mb-4 p-3 bg-gradient-to-r from-primary to-pool-teal rounded-full w-fit group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -103,19 +117,22 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-primary to-pool-teal rounded-2xl p-8 text-white">
-            <h3 className="text-3xl font-bold mb-4">Ready to Get Started?</h3>
-            <p className="text-xl mb-6 opacity-90">
-              Get a free consultation and personalized quote for your project
-            </p>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-pool-blue-dark"
-            >
-              Schedule Free Consultation
-            </Button>
+        <div className="text-center mt-16" data-aos="fade-up" data-aos-delay="400">
+          <div className="bg-gradient-to-r from-primary to-pool-teal rounded-2xl p-8 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold mb-4">Ready to Get Started?</h3>
+              <p className="text-xl mb-6 opacity-90">
+                Get a free consultation and personalized quote for your project
+              </p>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-pool-blue-dark hover:scale-105 transition-all duration-300"
+              >
+                Schedule Free Consultation
+              </Button>
+            </div>
           </div>
         </div>
       </div>

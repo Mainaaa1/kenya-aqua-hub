@@ -86,10 +86,20 @@ const Products = () => {
   ];
 
   return (
-    <section id="products" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="products" className="py-20 bg-background relative overflow-hidden">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+        <div className="absolute bottom-1/4 right-0 w-full h-px bg-gradient-to-l from-transparent via-pool-teal/20 to-transparent"></div>
+        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-right">
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pool-teal/10 to-primary/10 rounded-full text-pool-teal text-sm font-medium mb-6">
+            🛒 Premium Products
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Pool & Spa Products
           </h2>
@@ -101,14 +111,20 @@ const Products = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <Card key={product.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <div className="relative">
+          {products.map((product, index) => (
+            <Card 
+              key={product.id} 
+              className="group hover:shadow-xl hover:-translate-y-1 transition-all duration-400 overflow-hidden border-0 shadow-md bg-white/90 backdrop-blur-sm"
+              data-aos="flip-left"
+              data-aos-delay={index * 100}
+            >
+              <div className="relative overflow-hidden">
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-48 object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {product.badge && (
                   <Badge 
                     className="absolute top-3 left-3 bg-gradient-to-r from-primary to-pool-teal text-white border-0"
@@ -183,22 +199,29 @@ const Products = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-secondary/50 rounded-2xl p-8">
-            <h3 className="text-3xl font-bold text-foreground mb-4">Need Something Specific?</h3>
-            <p className="text-xl text-muted-foreground mb-6">
-              Can't find what you're looking for? Contact us for custom products and bulk orders.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-primary to-pool-teal text-white border-0"
-              >
-                Contact for Custom Orders
-              </Button>
-              <Button size="lg" variant="outline">
-                View Full Catalog
-              </Button>
+        <div className="text-center mt-16" data-aos="zoom-in-up">
+          <div className="bg-gradient-to-br from-secondary/80 to-accent/80 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-pool-teal/20 rounded-full blur-2xl"></div>
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold text-foreground mb-4">Need Something Specific?</h3>
+              <p className="text-xl text-muted-foreground mb-6">
+                Can't find what you're looking for? Contact us for custom products and bulk orders.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-primary to-pool-teal text-white border-0 hover:scale-105 transition-all duration-300"
+                >
+                  Contact for Custom Orders
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-white border-primary"
+                >
+                  View Full Catalog
+                </Button>
+              </div>
             </div>
           </div>
         </div>

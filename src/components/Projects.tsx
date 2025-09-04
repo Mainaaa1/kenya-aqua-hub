@@ -76,10 +76,19 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="projects" className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 bg-secondary/30 relative">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-pool-teal/20 to-primary/20 rounded-full animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-primary/20 to-pool-teal/20 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-down">
+          <div className="inline-flex items-center px-4 py-2 bg-white rounded-full text-primary text-sm font-medium mb-6 shadow-sm">
+            ✨ Portfolio Showcase
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Featured Projects
           </h2>
@@ -89,13 +98,13 @@ const Projects = () => {
           </p>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
             {categories.map((category) => (
               <Button
                 key={category.id}
                 variant={filter === category.id ? "default" : "outline"}
                 onClick={() => setFilter(category.id)}
-                className={filter === category.id ? "bg-gradient-to-r from-primary to-pool-teal text-white border-0" : ""}
+                className={`transition-all duration-300 hover:scale-105 ${filter === category.id ? "bg-gradient-to-r from-primary to-pool-teal text-white border-0 shadow-lg" : "hover:border-primary hover:text-primary"}`}
               >
                 {category.name}
               </Button>
@@ -105,15 +114,20 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <Card key={project.id} className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden">
+          {filteredProjects.map((project, index) => (
+            <Card 
+              key={project.id} 
+              className="group cursor-pointer hover:shadow-xl hover:-translate-y-3 transition-all duration-500 overflow-hidden bg-white/80 backdrop-blur-sm border-0 shadow-md"
+              data-aos="zoom-in"
+              data-aos-delay={index * 150}
+            >
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="absolute bottom-4 left-4 right-4">
                     <Button size="sm" variant="outline" className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-black">
                       <Eye className="h-4 w-4 mr-2" />
@@ -150,8 +164,12 @@ const Projects = () => {
         </div>
 
         {/* Load More */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white">
+        <div className="text-center mt-12" data-aos="fade-up">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="border-primary text-primary hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
+          >
             View All Projects
           </Button>
         </div>
