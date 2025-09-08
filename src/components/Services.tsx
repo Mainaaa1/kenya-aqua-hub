@@ -107,7 +107,10 @@ const Services = () => {
                     ))}
                   </ul>
                   
-                  <Button className="w-full bg-gradient-to-r from-primary to-pool-teal text-white border-0 hover:scale-105 transition-all duration-300">
+                  <Button 
+                    className="w-full bg-gradient-to-r from-primary to-pool-teal text-white border-0 hover:scale-105 transition-all duration-300"
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
                     Get Quote
                   </Button>
                 </div>
@@ -129,6 +132,7 @@ const Services = () => {
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-primary to-pool-teal text-white border-0 hover:scale-105 transition-all duration-300"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Schedule Free Consultation
                 </Button>
@@ -136,6 +140,7 @@ const Services = () => {
                   size="lg" 
                   variant="outline"
                   className="hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-white border-primary"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   View Our Work
                 </Button>

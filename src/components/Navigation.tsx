@@ -44,7 +44,11 @@ const Navigation = () => {
               <Phone className="h-4 w-4" />
               <span>+254 700 000 000</span>
             </div>
-            <Button size="sm" className="bg-gradient-to-r from-primary to-pool-teal text-white border-0">
+            <Button 
+              size="sm" 
+              className="bg-gradient-to-r from-primary to-pool-teal text-white border-0"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Get Quote
             </Button>
           </div>
@@ -82,7 +86,14 @@ const Navigation = () => {
                 <span>+254 700 000 000</span>
               </div>
               <div className="px-3">
-                <Button size="sm" className="w-full bg-gradient-to-r from-primary to-pool-teal text-white border-0">
+                <Button 
+                  size="sm" 
+                  className="w-full bg-gradient-to-r from-primary to-pool-teal text-white border-0"
+                  onClick={() => {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    setIsOpen(false);
+                  }}
+                >
                   Get Quote
                 </Button>
               </div>

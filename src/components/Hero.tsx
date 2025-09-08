@@ -61,6 +61,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-pool-blue to-pool-teal text-white border-0 px-8 py-4 text-lg font-semibold hover:shadow-lg transition-all duration-300"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get Free Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -69,6 +70,7 @@ const Hero = () => {
                 size="lg" 
                 variant="outline" 
                 className="border-2 border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-pool-blue-dark px-8 py-4 text-lg font-semibold transition-all duration-300"
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Our Work
               </Button>

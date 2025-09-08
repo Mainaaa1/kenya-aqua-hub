@@ -3,9 +3,18 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Eye, MapPin } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
+  const { toast } = useToast();
+
+  const handleViewDetails = (projectTitle: string) => {
+    toast({
+      title: "Project Details",
+      description: `Detailed information about "${projectTitle}" will be available soon. Contact us for more information.`,
+    });
+  };
 
   const projects = [
     {
@@ -129,7 +138,12 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="absolute bottom-4 left-4 right-4">
-                    <Button size="sm" variant="outline" className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-black">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-black"
+                      onClick={() => handleViewDetails(project.title)}
+                    >
                       <Eye className="h-4 w-4 mr-2" />
                       View Details
                     </Button>
@@ -169,6 +183,12 @@ const Projects = () => {
             variant="outline" 
             size="lg" 
             className="border-primary text-primary hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
+            onClick={() => {
+              toast({
+                title: "Full Portfolio Coming Soon",
+                description: "Our complete project gallery will be available soon. Contact us to see more examples of our work.",
+              });
+            }}
           >
             View All Projects
           </Button>

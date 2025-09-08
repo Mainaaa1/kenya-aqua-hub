@@ -2,8 +2,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Star } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Products = () => {
+  const { toast } = useToast();
+  
+  const handleAddToCart = (productName: string) => {
+    toast({
+      title: "Added to Cart",
+      description: `${productName} has been added to your cart.`,
+    });
+  };
+
   const products = [
     {
       id: 1,
@@ -188,6 +198,7 @@ const Products = () => {
                   <Button 
                     size="sm" 
                     className="bg-gradient-to-r from-primary to-pool-teal text-white border-0"
+                    onClick={() => handleAddToCart(product.name)}
                   >
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     Add to Cart
@@ -211,6 +222,7 @@ const Products = () => {
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-primary to-pool-teal text-white border-0 hover:scale-105 transition-all duration-300"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Contact for Custom Orders
                 </Button>
@@ -218,6 +230,12 @@ const Products = () => {
                   size="lg" 
                   variant="outline"
                   className="hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-white border-primary"
+                  onClick={() => {
+                    toast({
+                      title: "Catalog Coming Soon",
+                      description: "Our full digital catalog will be available soon. Contact us for immediate product information.",
+                    });
+                  }}
                 >
                   View Full Catalog
                 </Button>

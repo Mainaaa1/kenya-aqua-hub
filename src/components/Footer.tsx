@@ -2,9 +2,31 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+
+  const handleNewsletterSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({
+        title: "Subscription Successful!",
+        description: "Thank you for subscribing to our newsletter. You'll receive updates about our services and offers.",
+      });
+      setEmail("");
+    }
+  };
+
+  const handleSocialClick = (platform: string) => {
+    toast({
+      title: "Coming Soon",
+      description: `Follow us on ${platform} - Our social media pages are coming soon!`,
+    });
+  };
 
   const footerSections = [
     {
@@ -56,16 +78,19 @@ const Footer = () => {
             <p className="text-xl mb-8 opacity-90">
               Get the latest pool maintenance tips, new product announcements, and exclusive offers.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleNewsletterSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input 
                 type="email" 
                 placeholder="Enter your email address"
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
-              <Button variant="outline" className="border-white text-white bg-white/10 hover:bg-white hover:text-pool-blue-dark">
+              <Button type="submit" variant="outline" className="border-white text-white bg-white/10 hover:bg-white hover:text-pool-blue-dark">
                 Subscribe
               </Button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -102,14 +127,14 @@ const Footer = () => {
               {socialLinks.map((social, index) => {
                 const IconComponent = social.icon;
                 return (
-                  <a
+                  <button
                     key={index}
-                    href={social.href}
+                    onClick={() => handleSocialClick(social.label)}
                     aria-label={social.label}
                     className="p-2 bg-white/10 rounded-lg hover:bg-primary transition-colors"
                   >
                     <IconComponent className="h-5 w-5" />
-                  </a>
+                  </button>
                 );
               })}
             </div>
