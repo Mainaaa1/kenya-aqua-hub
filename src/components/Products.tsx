@@ -13,7 +13,7 @@ const Products = () => {
       originalPrice: "KES 18,000",
       rating: 4.8,
       reviews: 24,
-      image: "/placeholder.svg",
+      image: "/src/assets/product-skimmer.jpg",
       description: "High-performance automatic pool skimmer with advanced filtration system",
       features: ["Automatic operation", "Easy maintenance", "Durable materials"],
       badge: "Best Seller"
@@ -26,7 +26,7 @@ const Products = () => {
       originalPrice: null,
       rating: 4.6,
       reviews: 18,
-      image: "/placeholder.svg",
+      image: "/src/assets/product-test-kit.jpg",
       description: "Complete water testing kit for pH, chlorine, and alkalinity levels",
       features: ["Accurate readings", "Easy to use", "Professional grade"],
       badge: null
@@ -39,7 +39,7 @@ const Products = () => {
       originalPrice: "KES 35,000",
       rating: 4.9,
       reviews: 31,
-      image: "/placeholder.svg",
+      image: "/src/assets/product-led-lights.jpg",
       description: "Color-changing LED lights with remote control and smartphone app",
       features: ["RGB colors", "Remote control", "Waterproof IP68"],
       badge: "New Arrival"
@@ -52,7 +52,7 @@ const Products = () => {
       originalPrice: null,
       rating: 4.7,
       reviews: 12,
-      image: "/placeholder.svg",
+      image: "/src/assets/product-vacuum.jpg",
       description: "Robotic pool cleaner with intelligent navigation and debris collection",
       features: ["Automatic cleaning", "Smart navigation", "Large debris capacity"],
       badge: null
@@ -65,7 +65,7 @@ const Products = () => {
       originalPrice: "KES 75,000", 
       rating: 4.5,
       reviews: 8,
-      image: "/placeholder.svg",
+      image: "/src/assets/product-sauna-heater.jpg",
       description: "Professional-grade electric sauna heater suitable for 4-6 person saunas",
       features: ["6kW power", "Digital controls", "Safety certified"],
       badge: "Professional"
@@ -78,7 +78,7 @@ const Products = () => {
       originalPrice: null,
       rating: 4.4,
       reviews: 15,
-      image: "/placeholder.svg", 
+      image: "/src/assets/product-pump.jpg", 
       description: "High-efficiency submersible pump for fountains and water features",
       features: ["Variable flow", "Energy efficient", "Quiet operation"],
       badge: null
