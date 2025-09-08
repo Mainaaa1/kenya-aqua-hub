@@ -83,7 +83,7 @@ const Projects = () => {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-primary/20 to-pool-teal/20 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
       
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative">
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-down">
           <div className="inline-flex items-center px-4 py-2 bg-white rounded-full text-primary text-sm font-medium mb-6 shadow-sm">

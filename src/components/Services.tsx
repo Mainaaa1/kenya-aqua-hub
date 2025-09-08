@@ -46,7 +46,7 @@ const Services = () => {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-pool-teal to-primary rounded-full blur-3xl"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative">
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/10 to-pool-teal/10 rounded-full text-primary text-sm font-medium mb-6">

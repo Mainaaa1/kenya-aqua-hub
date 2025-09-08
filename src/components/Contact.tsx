@@ -64,7 +64,7 @@ const Contact = () => {
         <div className="absolute bottom-40 right-1/3 w-5 h-5 bg-pool-teal/30 rounded-full animate-pulse"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative">
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-down">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-pool-teal rounded-full text-white text-sm font-medium mb-6 shadow-lg">
