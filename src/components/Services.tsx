@@ -1,152 +1,103 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Waves, Thermometer, Droplets, Wrench, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import serviceInstallation from "@/assets/service-installation.jpg";
+import serviceMaintenance from "@/assets/service-maintenance.jpg";
+import serviceSauna from "@/assets/service-sauna.jpg";
+import serviceFountains from "@/assets/service-fountains.jpg";
 
 const Services = () => {
   const services = [
     {
-      icon: Droplets,
-      title: "Pool Installation & Design",
-      description: "Custom pool design and professional installation services for residential and commercial properties.",
-      price: "From KES 150,000",
-      features: ["Custom design consultation", "Professional installation", "Quality materials", "1-year warranty"],
-      image: "/src/assets/service-installation.jpg"
+      title: "Surface Cleaning",
+      description: "Molestiae non recusandae neau em rerum hic tenetur a sapiente aut reiciendis voluptatibus.",
+      image: serviceInstallation,
+      features: ["Pool surface cleaning", "Debris removal", "Water testing"]
     },
     {
-      icon: Wrench,
-      title: "Pool Maintenance", 
-      description: "Regular cleaning, chemical balancing, and equipment maintenance to keep your pool crystal clear.",
-      price: "From KES 8,500/month",
-      features: ["Weekly cleaning", "Chemical balancing", "Equipment check", "Emergency support"],
-      image: "/src/assets/service-maintenance.jpg"
+      title: "Renovations", 
+      description: "Complete pool renovation services to transform your existing pool into a modern masterpiece.",
+      image: serviceMaintenance,
+      features: ["Pool resurfacing", "Equipment upgrades", "Design updates"]
     },
     {
-      icon: Thermometer,
-      title: "Sauna Installation",
-      description: "Traditional and infrared sauna installation with premium Finnish materials and modern controls.",
-      price: "From KES 95,000", 
-      features: ["Finnish materials", "Professional installation", "Digital controls", "Health benefits"],
-      image: "/src/assets/service-sauna.jpg"
+      title: "Sauna & Spa",
+      description: "Professional sauna installation and spa services for the ultimate relaxation experience.",
+      image: serviceSauna,
+      features: ["Sauna installation", "Spa maintenance", "Heat therapy systems"]
     },
     {
-      icon: Waves,
-      title: "Water Features & Fountains",
-      description: "Decorative fountains and water features to enhance your landscape and create tranquil environments.", 
-      price: "From KES 45,000",
-      features: ["Custom designs", "Professional installation", "LED lighting options", "Low maintenance"],
-      image: "/src/assets/service-fountains.jpg"
+      title: "Fountain Design",
+      description: "Custom fountain installations that add elegance and tranquility to your outdoor space.",
+      image: serviceFountains,
+      features: ["Custom design", "Water features", "Lighting systems"]
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-background relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-primary to-pool-teal rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-pool-teal to-primary rounded-full blur-3xl"></div>
+    <section id="services" className="relative py-24 bg-white">
+      {/* Wave Shape Top */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden">
+        <svg className="relative block w-full h-20 md:h-32 rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="white"></path>
+          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="white"></path>
+          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="white"></path>
+        </svg>
       </div>
-      
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative">
+
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/10 to-pool-teal/10 rounded-full text-primary text-sm font-medium mb-6">
-            🔧 Professional Services
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Premium Services
+        <div className="text-center mb-16">
+          <p className="text-pool-blue text-sm font-semibold uppercase tracking-wide mb-4">Our Services</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Swimming Pool Facilities & Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From initial design to ongoing maintenance, we provide comprehensive 
-            aquatic solutions for residential and commercial properties across Kenya.
-          </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {services.map((service, index) => (
-            <Card 
-              key={index}
-              className="group bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-400 border border-primary/20 relative"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              {/* Service Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
-                <div className="absolute top-4 left-4 p-3 bg-white/20 backdrop-blur-sm rounded-xl">
-                  <service.icon className="h-6 w-6 text-white" />
+            <div key={index} className="group" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-pool-blue-dark/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="w-12 h-12 bg-yellow-accent rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-pool-blue rounded-full"></div>
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute bottom-4 right-4 text-right">
-                  <div className="text-xl font-bold text-white">{service.price}</div>
-                  <div className="text-sm text-white/80">Starting price</div>
-                </div>
-              </div>
-              
-              <div className="p-8 relative">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-pool-teal/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
                   
                   <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0 animate-pulse"></div>
-                        <span className="text-muted-foreground">{feature}</span>
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-pool-blue rounded-full mr-3"></div>
+                        {feature}
                       </li>
                     ))}
                   </ul>
                   
                   <Button 
-                    className="w-full bg-gradient-to-r from-primary to-pool-teal text-white border-0 hover:scale-105 transition-all duration-300"
+                    variant="yellow-outline"
+                    size="sm"
+                    className="w-full font-semibold"
                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   >
-                    Get Quote
+                    Read More
                   </Button>
                 </div>
               </div>
-            </Card>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-16" data-aos="fade-up" data-aos-delay="400">
-          <div className="bg-gradient-to-br from-secondary/80 to-accent/80 rounded-2xl p-8 backdrop-blur-sm border border-primary/20 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-pool-teal/20 rounded-full blur-2xl"></div>
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h3>
-              <p className="text-xl text-muted-foreground mb-6">
-                Get a free consultation and personalized quote for your project
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-primary to-pool-teal text-white border-0 hover:scale-105 transition-all duration-300"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Schedule Free Consultation
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="hover:scale-105 transition-all duration-300 hover:bg-primary hover:text-white border-primary"
-                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  View Our Work
-                </Button>
-              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

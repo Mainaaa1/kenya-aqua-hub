@@ -15,22 +15,27 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-primary">Kenya PoolShop</h1>
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-pool-blue rounded mr-3 flex items-center justify-center">
+                <div className="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+              <h1 className="text-2xl font-bold text-pool-blue-dark">POOLREZ</h1>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="flex items-center space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  className="text-gray-800 hover:text-pool-blue px-2 py-2 text-sm font-medium uppercase tracking-wide transition-colors"
                 >
                   {item.name}
                 </a>
@@ -39,17 +44,20 @@ const Navigation = () => {
           </div>
 
           {/* Contact Info & CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4" />
-              <span>+254 700 000 000</span>
+          <div className="hidden lg:flex items-center space-x-6">
+            <div className="flex items-center space-x-3 text-sm text-gray-600">
+              <div className="w-6 h-6 bg-pool-blue rounded-full flex items-center justify-center">
+                <Phone className="h-3 w-3 text-white" />
+              </div>
+              <span className="font-medium">+5689 2589 6325</span>
             </div>
             <Button 
+              variant="yellow"
               size="sm" 
-              className="bg-gradient-to-r from-primary to-pool-teal text-white border-0"
+              className="px-6 py-2 text-sm font-semibold uppercase tracking-wide rounded-full"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Get Quote
+              REQUEST A QUOTE
             </Button>
           </div>
 
@@ -69,32 +77,33 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-b border-border">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-gray-200">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                className="text-gray-800 hover:text-pool-blue block px-3 py-2 rounded-md text-base font-medium uppercase tracking-wide transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </a>
             ))}
-            <div className="pt-4 border-t border-border">
-              <div className="flex items-center px-3 py-2 text-sm text-muted-foreground">
+            <div className="pt-4 border-t border-gray-200">
+              <div className="flex items-center px-3 py-2 text-sm text-gray-600">
                 <Phone className="h-4 w-4 mr-2" />
-                <span>+254 700 000 000</span>
+                <span>+5689 2589 6325</span>
               </div>
               <div className="px-3">
                 <Button 
+                  variant="yellow"
                   size="sm" 
-                  className="w-full bg-gradient-to-r from-primary to-pool-teal text-white border-0"
+                  className="w-full"
                   onClick={() => {
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                     setIsOpen(false);
                   }}
                 >
-                  Get Quote
+                  REQUEST A QUOTE
                 </Button>
               </div>
             </div>

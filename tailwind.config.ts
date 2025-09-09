@@ -62,12 +62,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom PoolShop colors
+				// Custom PoolShop colors - PoolRez inspired
 				pool: {
 					blue: 'hsl(var(--pool-blue))',
 					'blue-dark': 'hsl(var(--pool-blue-dark))',
 					teal: 'hsl(var(--pool-teal))',
 					'aqua-light': 'hsl(var(--aqua-light))'
+				},
+				yellow: {
+					accent: 'hsl(var(--yellow-accent))',
+					'accent-hover': 'hsl(var(--yellow-accent-hover))'
 				}
 			},
 			borderRadius: {
