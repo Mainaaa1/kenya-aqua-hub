@@ -24,7 +24,7 @@ const Navigation = () => {
               <div className="w-8 h-8 bg-pool-blue rounded mr-3 flex items-center justify-center">
                 <div className="w-4 h-4 bg-white rounded-full"></div>
               </div>
-              <h1 className="text-2xl font-bold text-pool-blue-dark">POOLREZ</h1>
+              <h1 className="text-xl md:text-2xl font-bold text-pool-blue-dark">Kenya PoolShop</h1>
             </div>
           </div>
 
@@ -49,7 +49,7 @@ const Navigation = () => {
               <div className="w-6 h-6 bg-pool-blue rounded-full flex items-center justify-center">
                 <Phone className="h-3 w-3 text-white" />
               </div>
-              <span className="font-medium">+5689 2589 6325</span>
+              <span className="font-medium">+254 700 000 000</span>
             </div>
             <Button 
               variant="yellow"
@@ -91,7 +91,7 @@ const Navigation = () => {
             <div className="pt-4 border-t border-gray-200">
               <div className="flex items-center px-3 py-2 text-sm text-gray-600">
                 <Phone className="h-4 w-4 mr-2" />
-                <span>+5689 2589 6325</span>
+                <span>+254 700 000 000</span>
               </div>
               <div className="px-3">
                 <Button 
