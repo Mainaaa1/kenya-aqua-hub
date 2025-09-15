@@ -41,7 +41,7 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/10 to-pool-teal/10 rounded-full text-primary text-sm font-medium mb-6">
-            🏢 About Kenya PoolShop
+            🏢 About AquaVibe Kenya
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Your Trusted Pool & Spa Partner
@@ -62,7 +62,7 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-muted-foreground">
                 <p className="text-lg leading-relaxed">
-                  Kenya PoolShop began with a simple vision: to bring world-class aquatic experiences 
+                  AquaVibe Kenya began with a simple vision: to bring world-class aquatic experiences 
                   to homes and businesses across Kenya. What started as a small family business has 
                   grown into the country's most trusted name in pool and spa solutions.
                 </p>
