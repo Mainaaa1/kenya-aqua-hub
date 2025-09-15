@@ -131,4 +131,3 @@ The project uses a custom design system with:
 
 ---
 
-Built with ❤️ using [Lovable](https://lovable.dev)
