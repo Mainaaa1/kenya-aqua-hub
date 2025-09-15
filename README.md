@@ -1,73 +1,161 @@
-# Welcome to your Lovable project
+# AquaVibe Kenya
 
-## Project info
+AquaVibe Kenya is a professional pool and aquatic solutions company website showcasing services for pool installation, maintenance, luxury saunas, and custom fountains across Kenya.
 
-**URL**: https://lovable.dev/projects/d330ddb9-1b1c-43fd-84a1-dfcb63cad60f
+## 🏊‍♂️ Project Overview
 
-## How can I edit this code?
+This is a modern, responsive business website built for AquaVibe Kenya, featuring:
 
-There are several ways of editing your application.
+- **Professional Pool Services**: Installation, maintenance, and repair services
+- **Luxury Saunas & Spas**: Premium sauna solutions and installations  
+- **Custom Fountains**: Bespoke water feature design and installation
+- **Product Showcase**: Pool equipment, chemicals, and accessories
+- **Project Portfolio**: Gallery of completed installations
+- **Contact Integration**: Quote request forms with toast notifications
 
-**Use Lovable**
+## 🛠️ Technology Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d330ddb9-1b1c-43fd-84a1-dfcb63cad60f) and start prompting.
+This project is built with modern web technologies:
 
-Changes made via Lovable will be committed automatically to this repo.
+### Core Framework
+- **React 18** - Modern UI library with hooks
+- **TypeScript** - Type-safe development 
+- **Vite** - Fast build tool and dev server
 
-**Use your preferred IDE**
+### Styling & UI
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality UI component library
+- **Lucide React** - Beautiful icon library
+- **AOS** - Animate On Scroll library
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Routing & State
+- **React Router DOM** - Client-side routing
+- **TanStack Query** - Server state management
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Form & Notifications  
+- **React Hook Form** - Performant form handling
+- **Zod** - Schema validation
+- **Sonner** - Toast notifications
 
-Follow these steps:
+### Development Tools
+- **ESLint** - Code linting
+- **PostCSS** - CSS processing
+- **Bun** - Fast package manager
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- Bun (recommended) or npm
+
+### Installation
+
+1. Clone the repository:
+```bash
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Install dependencies:
+```bash
+bun install
+# or
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
+bun dev
+# or
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📁 Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── Navigation.tsx   # Site navigation
+│   ├── Hero.tsx        # Hero section
+│   ├── About.tsx       # About section
+│   ├── Services.tsx    # Services showcase
+│   ├── Projects.tsx    # Project portfolio
+│   ├── Products.tsx    # Product catalog
+│   ├── Contact.tsx     # Contact form
+│   └── Footer.tsx      # Site footer
+├── pages/              # Page components
+│   ├── Index.tsx       # Homepage
+│   └── NotFound.tsx    # 404 page
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── assets/             # Images and static files
+└── main.tsx           # Application entry point
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Design System
 
-## What technologies are used for this project?
+The project uses a custom design system with:
+- **Pool-themed color palette** (blues, teals)
+- **Responsive typography scale**
+- **Consistent spacing and shadows**
+- **Smooth animations and transitions**
+- **Mobile-first responsive design**
 
-This project is built with:
+## 🌐 Features
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Responsive Design
+- Mobile-first approach
+- Optimized for all screen sizes
+- Touch-friendly navigation
 
-## How can I deploy this project?
+### Performance
+- Optimized images with lazy loading
+- Efficient bundle splitting
+- Fast page load times
 
-Simply open [Lovable](https://lovable.dev/projects/d330ddb9-1b1c-43fd-84a1-dfcb63cad60f) and click on Share -> Publish.
+### Accessibility
+- Semantic HTML structure
+- ARIA labels and roles
+- Keyboard navigation support
+- High contrast ratios
 
-## Can I connect a custom domain to my Lovable project?
+### SEO Optimized
+- Meta tags and descriptions
+- Structured data markup
+- Semantic HTML elements
+- Optimized images with alt text
 
-Yes, you can!
+## 📧 Contact & Support
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+For questions about this codebase or AquaVibe Kenya services:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Website**: [View Live Site](https://lovable.dev/projects/d330ddb9-1b1c-43fd-84a1-dfcb63cad60f)
+- **Phone**: +254 700 000 000
+- **Email**: info@aquavibekenya.com
+
+## 🚀 Deployment
+
+This project can be easily deployed using Lovable's hosting platform:
+
+1. Open [Lovable Project](https://lovable.dev/projects/d330ddb9-1b1c-43fd-84a1-dfcb63cad60f)
+2. Click on **Share → Publish**
+3. Your site will be live instantly
+
+### Custom Domain
+To connect a custom domain:
+1. Navigate to **Project > Settings > Domains**
+2. Click **Connect Domain**
+3. Follow the setup instructions
+
+Read more: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## 📄 License
+
+This project is proprietary software developed for AquaVibe Kenya.
+
+---
+
+Built with ❤️ using [Lovable](https://lovable.dev)
