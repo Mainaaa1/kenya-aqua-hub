@@ -128,33 +128,6 @@ The project uses a custom design system with:
 - Semantic HTML elements
 - Optimized images with alt text
 
-## 📧 Contact & Support
-
-For questions about this codebase or AquaVibe Kenya services:
-
-- **Website**: [View Live Site](https://lovable.dev/projects/d330ddb9-1b1c-43fd-84a1-dfcb63cad60f)
-- **Phone**: +254 700 000 000
-- **Email**: info@aquavibekenya.com
-
-## 🚀 Deployment
-
-This project can be easily deployed using Lovable's hosting platform:
-
-1. Open [Lovable Project](https://lovable.dev/projects/d330ddb9-1b1c-43fd-84a1-dfcb63cad60f)
-2. Click on **Share → Publish**
-3. Your site will be live instantly
-
-### Custom Domain
-To connect a custom domain:
-1. Navigate to **Project > Settings > Domains**
-2. Click **Connect Domain**
-3. Follow the setup instructions
-
-Read more: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
-
-## 📄 License
-
-This project is proprietary software developed for AquaVibe Kenya.
 
 ---
 
