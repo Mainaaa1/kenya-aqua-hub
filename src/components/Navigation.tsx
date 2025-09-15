@@ -24,7 +24,7 @@ const Navigation = () => {
               <div className="w-8 h-8 bg-pool-blue rounded mr-3 flex items-center justify-center">
                 <div className="w-4 h-4 bg-white rounded-full"></div>
               </div>
-              <h1 className="text-xl md:text-2xl font-bold text-pool-blue-dark">Kenya PoolShop</h1>
+              <h1 className="text-xl md:text-2xl font-bold text-pool-blue-dark">AquaVibe Kenya</h1>
             </div>
           </div>
 
